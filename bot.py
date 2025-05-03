@@ -57,11 +57,11 @@ class MergeBot(Client):
             self.send_message(chat_id=int(Config.OWNER), text="<b>Bot Started!</b>")
         except Exception as err:
             LOGGER.error("Boot alert failed! Please start bot in PM")
-        return LOGGER.info("Bot Started!")
+        return LOGGER.info("Bot Started!💀")
 
     def stop(self):
         super().stop()
-        return LOGGER.info("Bot Stopped")
+        return LOGGER.info("Bot Stopped💀")
 
 
 mergeApp = MergeBot(
@@ -89,12 +89,12 @@ async def sendLogFile(c: Client, m: Message):
 async def loginHandler(c: Client, m: Message):
     user = UserSettings(m.from_user.id, m.from_user.first_name)
     if user.banned:
-        await m.reply_text(text=f"**Banned User Detected!**\n  🛡️ Unfortunately you can't use me\n\nContact: 🈲 @{Config.OWNER_USERNAME}", quote=True)
+        await m.reply_text(text=f"**Banned User Detected!**\n  Ahhoyy! Pirate💀\n\n🧪 you Can use..? \n♻send /login \n⭕for Password Contact @LarvaLinks or @Saini_Lokendra \n\nContact: 💀 @{Config.OWNER_USERNAME}", quote=True)
         return
     if user.user_id == int(Config.OWNER):
         user.allowed = True
     if user.allowed:
-        await m.reply_text(text=f"**Dont Spam**\n  ⚡ You can use me!!", quote=True)
+        await m.reply_text(text=f"**Dont Spam😎**\n  🃏 You can use me!!😎🌟", quote=True)
     else:
         try:
             passwd = m.text.split(" ", 1)[1]
@@ -104,11 +104,11 @@ async def loginHandler(c: Client, m: Message):
         if passwd == Config.PASSWORD:
             user.allowed = True
             await m.reply_text(
-                text=f"**Login passed ✅,**\n  ⚡ Now you can use me!!", quote=True
+                text=f"**Login passed ✅,**\n  💢 Now you can use me!!😵", quote=True
             )
         else:
             await m.reply_text(
-                text=f"**Login failed ❌,**\n  🛡️ Unfortunately you can't use me\n\nContact: 🈲 @{Config.OWNER_USERNAME}",
+                text=f"**Login failed ❌,**\n  Ahhoyy! Pirate💀\n\n🧪 you Can use..? \n♻send /login \n⭕for Password Contact @LarvaLinks or @Saini_Lokendra \n\nContact: 💀 @{Config.OWNER_USERNAME}",
                 quote=True,
             )
     user.set()
@@ -196,7 +196,7 @@ async def start_handler(c: Client, m: Message):
     if m.from_user.id != int(Config.OWNER):
         if user.allowed is False:
             res = await m.reply_text(
-                text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
+                text=f"Ahhoyy ! Pirate  **{m.from_user.first_name}**\n\n Ahhoyy! Pirate💀\n\n🧪 you Can use..? \n♻send /login \n⭕for Password Contact @LarvaLinks or @Saini_Lokendra \n\nContact: 💀 @{Config.OWNER_USERNAME}** ",
                 quote=True,
             )
             return
@@ -204,7 +204,7 @@ async def start_handler(c: Client, m: Message):
         user.allowed = True
         user.set()
     res = await m.reply_text(
-        text=f"Hi **{m.from_user.first_name}**\n\n ⚡ I am a file/video merger bot\n\n😎 I can merge Telegram files!, And upload it to telegram\n\n**Owner: 🈲 @{Config.OWNER_USERNAME}** ",
+        text=f"Ahhoyy! Pirate. **{m.from_user.first_name}**\n\n🧪I am a file/video merger bot\n\n🗿I can merge Telegram files!, And upload it to telegram\n\n**Owner: 💀 @{Config.OWNER_USERNAME}** ",
         quote=True,
     )
     del user
@@ -219,7 +219,7 @@ async def files_handler(c: Client, m: Message):
     if user_id != int(Config.OWNER):
         if user.allowed is False:
             res = await m.reply_text(
-                text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
+                text=f"Ahhoyy! Pirate **{m.from_user.first_name}**\n\n Ahhoyy! Pirate💀\n\n🧪 you Can use..? \n♻send /login \n⭕for Password Contact @LarvaLinks or @Saini_Lokendra \n\nContact: 💀 @{Config.OWNER_USERNAME}** ",
                 quote=True,
             )
             return
@@ -399,7 +399,7 @@ async def photo_handler(c: Client, m: Message):
     # if m.from_user.id != int(Config.OWNER):
     if not user.allowed:
         res = await m.reply_text(
-            text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
+            text=f"Ahhoyy! Pirate**{m.from_user.first_name}**\n\n Ahhoyy! Pirate💀\n\n🧪 you Can use..? \n♻send /login \n⭕for Password Contact @LarvaLinks or @Saini_Lokendra \n\nContact: 💀 @{Config.OWNER_USERNAME}** ",
             quote=True,
         )
         del user
@@ -430,7 +430,7 @@ async def media_extracter(c: Client, m: Message):
             mid=rmess.id
             file_name = media.file_name
             if file_name is None:
-                await m.reply("File name not found; goto @yashoswalyo")
+                await m.reply("File name not found; goto @LarvaLinks")
                 return
             markup = bMaker.makebuttons(
                 set1=["Audio", "Subtitle", "Cancel"],
@@ -445,7 +445,7 @@ async def media_extracter(c: Client, m: Message):
             )
     else:
         await m.reply(
-            text="Change settings and set mode to extract\nthen use /extract command"
+            text="🧪go to /Settings\n\n🏝Change settings and set mode to extract\nthen use /extract command"
         )
 
 
@@ -488,13 +488,13 @@ async def about_handler(c: Client, m: Message):
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("👨‍💻Developer👨‍💻", url="https://t.me/yashoswalyo")],
+                [InlineKeyboardButton("🧪DeveLoper🏝", url="https://t.me/DanDikosta")],
                 [
                     InlineKeyboardButton(
-                        "🏘Source Code🏘", url="https://github.com/yashoswalyo/MERGE-BOT"
+                        "Tap Karo", url="https://t.me/+xIYS8qn_Nhs2Y2E1"
                     ),
                     InlineKeyboardButton(
-                        "🤔Deployed By🤔", url=f"https://t.me/{Config.OWNER_USERNAME}"
+                        "🤔Deployed By🤔", url=f"https://t.me/LarvaLinks"
                     ),
                 ],
                 [InlineKeyboardButton("Close 🔐", callback_data="close")],
@@ -525,12 +525,12 @@ async def show_thumbnail(c: Client, m: Message):
         LOCATION = f"downloads/{str(m.from_user.id)}_thumb.jpg"
         if os.path.exists(LOCATION):
             await m.reply_photo(
-                photo=LOCATION, caption="🖼️ Your custom thumbnail", quote=True
+                photo=LOCATION, caption="👻Your custom thumbnail", quote=True
             )
         elif thumb_id is not None :
             await c.download_media(message=str(thumb_id), file_name=LOCATION)
             await m.reply_photo(
-                photo=LOCATION, caption="🖼️ Your custom thumbnail", quote=True
+                photo=LOCATION, caption="👻 Your custom thumbnail", quote=True
             )
         else: 
             await m.reply_text(text="❌ Custom thumbnail not found", quote=True)
@@ -577,7 +577,7 @@ I found your messages annoying and forwarded them to our team of moderators for 
 
 While the account is banned, you will not be able to do certain things, like merging videos/audios/subtitles or extract audios from Telegram media.
 
-Your account can be released only by @{Config.OWNER_USERNAME}."""
+Your account can be released only by @Saini_Lokendra and @{Config.OWNER_USERNAME}."""
                         try:
                             await c.send_message(
                                 chat_id=abuser_id,
@@ -741,7 +741,7 @@ if __name__ == "__main__":
         with userBot:
             userBot.send_message(
                 chat_id=int(LOGCHANNEL),
-                text="Bot booted with Premium Account,\n\n  Thanks for using <a href='https://github.com/yashoswalyo/merge-bot'>this repo</a>",
+                text="Bot booted with Premium Account,\n\n  Thanks for using <a href='https://t.me/LarvaLinks'>this repo</a>",
                 disable_web_page_preview=True,
             )
             user = userBot.get_me()
